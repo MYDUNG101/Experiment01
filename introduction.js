@@ -109,6 +109,9 @@ export function displayInstructionsExample(){
     // let paraEvent = general.createParagraph(data.pages.instructions.text_events);
     // container.appendChild(paraEvent);
 
+    let para_next = general.createParagraph(data.pages.example.text_next);
+    container.appendChild(para_next);
+
     let btn = general.createButton(data.pages.example.button, function() {
         displayInstructions();
     })

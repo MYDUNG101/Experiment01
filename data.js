@@ -36,11 +36,11 @@ var imagesIndex = Object.keys(images);
 export var shuffledImages = imagesIndex.sort((a, b) => 0.5 - Math.random());
 
 export var answers = {
-	1: "Initially you decide to cook a dish without using oil. I.e. you decide to <b><u>exclude</u></b> using oil.",
-	2: "Before cooking the dish, you need to prepare the ingredients. I.e. <b><u>You need</u></b> to prepare the ingredients first <b><u>before</u></b> cooking the dish.",
-	3: "Once you have prepared the ingredients, cooking the dish becomes <b><u>a goal that you must eventually do</u></b>.",
-	4: "The pan you are using is an old pan, and you decide to use oil after all. I.e. you decide to <b><u>include</u></b> using oil.",
-	5: "You can <b><u>initially</u></b> start to cook. If another person is using the stove then that is a <b><u>goal that must be done</u></b> before you can start cooking.",
+	1: "At first, you decide to cook a dish without using oil; i.e., you decide to <b><u>exclude</u></b> using oil.",
+	2: "You <b><u>need</u></b> to prepare the ingredients <b><u>before</u></b> cooking the dish.",
+	3: "Once you have prepared the ingredients, cooking the dish becomes <b><u>a goal </u></b>that you <b><u>must eventually</u></b> do.",
+	4: "The pan you are using is an old pan, and you decide to use oil after all; i.e., you decide to <b><u>include</u></b> using oil.",
+	5: "If another person is using the stove then that is <b><u>a goal</u></b> that <b><u>must</u></b> be done before you can start cooking.",
 	6: "No description fits"
 }
 
@@ -79,7 +79,7 @@ export var pages = {
 		"text_include": "<hr>The pan you are using is an old pan, and you decide to use oil after all; i.e., you decide to <b><u>include</u></b> using oil.",
 
 		"text_milestone": "<hr>For cooking the dish, you can always use the stove unless someone else is using it, then you must wait until the they are done using the it; i.e., if another person is using the stove then that is <b><u>a goal</u></b> that <b><u>must</u></b> be done before you can start cooking.<hr>",
-
+		"text_next": "<br><br> Following is the instructions for the survey.",
 		"button": "CONTINUE"
 	},
 	"instructions":{
@@ -92,7 +92,7 @@ export var pages = {
 		"button": "START"
 	},
 	"questions":{
-		"text_task":"Which of the following descriptions most accurately describes the relation in the image?",
+		"text_task":"Imagine you are getting ready to cook dinner.<br>Which of the following descriptions most accurately describes the relation in the image?",
 		"tooltip":"\"Events\": Something that can happen (The two rounded squares). <br> <br> \"Relation\": The relationship and connection between the two events.",
 		"button": "Next"
 	},
