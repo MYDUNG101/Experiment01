@@ -1,44 +1,39 @@
 import * as general from './general.js'
 import * as data from "./data.js"
 import { displayDemographics } from './demographics.js';
+import { writeData } from './database.js';
 
+var answers = {};
 
-var selected_answer;
-var answers = [];
-
-function resetButtons(answer_buttons){
-    for (let b of answer_buttons) {
-        b.classList.remove("selected");
-        selected_answer = null;
+function getAnswerCardID(answerID){
+    return "answer_card" + answerID;
+}
+function resetAnswerButtons(){
+    for (let [id, _] of Object.entries(data.answers)) {
+        let btn = document.getElementById(getAnswerCardID(id));
+        btn.classList.remove("selected");
     }
 }
 
-function displayAnswerButtons(next_btn) {
+function displayAnswerButtons(img_id, next_btn) {
     let div = document.createElement("div");
     div.classList.add("questions_container");
 
-    let answer_buttons = [];
-    for (let ans of data.answers) {
-        var btn = create_answer_card(ans);
-        answer_buttons.push(btn);
-    }
-
-    for (let btn of answer_buttons){
-        btn.addEventListener("click", function() {
-            resetButtons(answer_buttons);
-            btn.classList.add("selected");
-            selected_answer = btn;
+    for (let [id, txt] of Object.entries(data.answers)) {
+        var btn = create_answer_card(txt);
+        btn.id = getAnswerCardID(id);
+        btn.addEventListener("click", function(e) {
+            resetAnswerButtons();
+            answers[img_id] = e.target.id;
+            e.target.classList.add("selected");
             next_btn.disabled = false;
         });
+        
         div.appendChild(btn);
     }
-    container.appendChild(div);
-    /*let next = document.getElementById("answer_button");
-    next.addEventListener("click", function(){
-        
-    });*/
-}
 
+    container.appendChild(div);
+}
 
 function create_answer_card(text) {
     let card = document.createElement("button");
@@ -50,33 +45,21 @@ function create_answer_card(text) {
 
 export function displayQuestion(index){
     container.innerHTML = "";
+    console.log("current answers" + Object.entries(answers));
 
     //Title
     let title = general.createTitle(index+1 + "/" + data.shuffledImages.length);
     container.appendChild(title);
 
-/*
-    if (currentButtons != null){
-        for(var i = 0; i < currentButtons.length; i++){
-            currentButtons[i].disabled = false;
-        }
-    }*/
-
     //Image
     let img = document.createElement("img");
-    img.src = "images/" + data.images[data.shuffledImages[index]].image;
+    let img_id = data.shuffledImages[index];
+    img.src = "images/" + data.images[img_id].image;
     img.classList.add("question_image");
     container.appendChild(img);
 
-    console.log(data.images[data.shuffledImages[index]].image);
+    console.log("imag id" + img_id);
     console.log(index);
-
-
-    // Notation for representing the events
-    // let eventNotation = general.createParagraph(data.pages.questions.text_events);
-    // eventNotation.classList.add("pcenter");
-    // eventNotation.classList.add("p_inline_block");
-    // container.appendChild(eventNotation);
 
     // Task
     let task = general.createParagraph(data.pages.questions.text_task);
@@ -99,9 +82,9 @@ export function displayQuestion(index){
 
     //Next button
     let btn = general.createButton(data.pages.questions.button, function() {
-        answers.push(selected_answer);
+        // if (index == 1) {
         if (index+1 == data.shuffledImages.length) {
-            displayDemographics();
+            displayDemographics(answers);
         } else {
             displayQuestion(index+1);
         }
@@ -109,8 +92,7 @@ export function displayQuestion(index){
     btn.disabled = true;
 
     //Answers 
-    displayAnswerButtons(btn);
+    displayAnswerButtons(img_id, btn);
 
     container.appendChild(btn);
 }
-

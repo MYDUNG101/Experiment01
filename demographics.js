@@ -1,5 +1,6 @@
 import * as data from "./data.js"
 import * as general from './general.js'
+import { writeData } from './database.js';
 
 function createInputLabel(input_field){
     let lbl_container = document.createElement("div");
@@ -80,16 +81,16 @@ export function createForm(){
     form.classList.add("demographics_form");
 
     for(let input_field of data.demographics_form){
-        if (input_field.type == "text"){
-            appendTextInput(form, input_field);
-        } else if (input_field.type == "radio"){
+        if (input_field.type == "radio"){
             appendRadioInput(form, input_field);
+        } else {
+            appendTextInput(form, input_field);
         }
     }
     return form;
 }
 
-export function displayDemographics(){
+export function displayDemographics(answers){
     container.innerHTML = "";
     let title = general.createTitle("DEMOGRAPHICS");
     container.appendChild(title);
@@ -105,26 +106,32 @@ export function displayDemographics(){
 
     let form = createForm();
     form.appendChild(submit_btn);
-    form.addEventListener("submit", submitAnswers);
+    form.addEventListener("submit", submitFn(answers));
 
     container.appendChild(form); 
 }
 
-function submitAnswers(e){
-    console.log("done");
-    e.preventDefault();
-    displayThanks()
-    // try {
-    //     const docRef = await addDoc(collection(db, "users"), {
-    //       first: "Ada",
-    //       last: "Lovelace",
-    //       born: 1815
-    //     });
-    //     console.log("Document written with ID: ", docRef.id);
-    //   } catch (e) {
-    //     console.error("Error adding document: ", e);
-    //   }
-    return true;
+let submitFn = function(answers){
+    return function(e){
+        e.preventDefault();
+        
+        let values = {"answers":answers};
+        for(let input_field of data.demographics_form){
+            if (input_field.type == "radio"){
+                for(let opt of input_field.options) {
+                    if(document.getElementById(opt).checked){
+                        values[input_field.label] = opt;
+                    }
+                }
+            } else {
+                values[input_field.label] = document.getElementById(input_field.label).value;
+            }
+        }
+
+        writeData({"demographics": values}, displayThanks);
+        
+        return true;
+    };
 }
 
 export function displayThanks(){
