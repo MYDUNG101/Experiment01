@@ -62,8 +62,8 @@ export var pages = {
 	// },
 	"dcr": {
 		"title": "Dynamic Condition Response (DCR)",
-		"text": "Before the survey begins you will need to know about <b><i>events</i></b> and <b><i>relations</i></b> in DCR.<ul><li>An <b><i>event</i></b>, which is visualized by a rounded square, represents something that can happen.</li><li>A <b><i>relation</i></b> represents a relationship between two events. The relations in DCR are like constraints that you can apply to the events in order to remove undesired behavior in a process. </li></ul>",
-		"text_image": "In the image above the <b><i>events</i></b> are indicated as a spade and a diamond. The icons in itself do not have any meaning, but indicate that the two events are different from each other.<br>The <b><i>relation</i></b> is indicated by the continuous connection between the two events. <br><br> To easier understand the concept of DCR relations, let us use an example.",
+		"text": "Before the survey begins you will need to know about <b><i>events</i></b> and <b><i>relations</i></b> in DCR.<ul><li>An <b><i>event</i></b>, which is visualized by a rectangle, represents something that can happen.</li><li>A <b><i>relation</i></b> represents a relationship between two events. The relations in DCR are like constraints that you can apply to the events in order to remove undesired behavior in a process. </li></ul>",
+		"text_image": "In the image above the <b><i>events</i></b> are indicated as rectangles with a spade and a diamond. The icons in itself do not have any meaning, but indicate that the two events are different from each other.<br>The <b><i>relation</i></b> is indicated by the continuous connection between the two events. <br><br> To easier understand the concept of DCR relations, let us use an example.",
 		"button": "CONTINUE"
 	},
 	"example": {
