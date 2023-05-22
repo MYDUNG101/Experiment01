@@ -16,7 +16,7 @@ var container = document.getElementById("container");
 
 
 (function () {
-    introduction.displayStart();
+    introduction.displayAbout();
 }());
 
 //var key = firebase.database().ref().push().key;

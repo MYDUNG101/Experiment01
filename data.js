@@ -51,7 +51,7 @@ export var pages = {
 	},
 	"about": {
 		"title": "ABOUT",
-		"text": "My name is Dung M. T. Trinh and I am a bachelor student at Technical University of Denmark (DTU). <br> <br> As part of my bachelor project, I am conducting a survey as one of my studies. The purpose of this survey is to investigate the understanding of the <b><i>visual representation of relations</i></b> with its intended meaning for Dynamic Condition Response (DCR) graphs.",
+		"text": "My name is Dung M. T. Trinh and I am a bachelor student at Technical University of Denmark (DTU). <br> <br> As part of my bachelor project, I am conducting a survey as one of my studies. The purpose of this survey is to investigate the understanding of the <b><i>visual representation of relations</i></b> with its intended meaning for Dynamic Condition Response (DCR) graphs. <br> <br>Before the survey you will be provided with an explanation and an example of the use of DCR relations. You will also be given instructions on how to complete the survey <br> <br><b>Please read the explanation, example of use and instructions thoroughly.</b>.",
 		"button": "CONTINUE"
 	},
 	// "instructions": {
@@ -62,32 +62,33 @@ export var pages = {
 	// },
 	"dcr": {
 		"title": "Dynamic Condition Response (DCR)",
-		"text": "Before the survey begins you will need to know about <b><i>events</i></b> and <b><i>relations</i></b> in DCR.<ul><li>An <b><i>event</i></b>, which is visualized by a rectangle, represents something that can happen.</li><li>A <b><i>relation</i></b> represents a relationship between two events. The relations in DCR are like constraints that you can apply to the events in order to remove undesired behavior in a process. </li></ul>",
-		"text_image": "In the image above the <b><i>events</i></b> are indicated as rectangles with a spade and a diamond. The icons in itself do not have any meaning, but indicate that the two events are different from each other.<br>The <b><i>relation</i></b> is indicated by the continuous connection between the two events. <br><br> To easier understand the concept of DCR relations, let us use an example.",
+		"text": "There are two types of nodes in DCR grpahs:<ul><li>An <b><i>event</i></b>, which is visualized by a rectangle, represents something that can happen.</li><li>A <b><i>relation</i></b> represents a relationship between two events. The relations in DCR are like constraints that you can apply to the events. </li></ul> In the image below, the <b><i>events</i></b> are indicated as rectangles with the symbols of a spade and a diamond. The symbols do not have any meaning, but signify that the two events are different from each other. The <b><i>relation</i></b> is indicated by the continuous connection between the two events. ",
+		"text_image": "Following is an example of the use of DCR relations.",
 		"button": "CONTINUE"
 	},
 	"example": {
 		"title": "EXAMPLE",
-		"text": "<b>Please read the following carefully and thoroughly</b>.<br><br> Imagine you are getting ready to cook dinner. These are the 5 constraints you are applying.<br><br><br>" ,
-		// "text_events":"To easier refer to an event, the descriptions will refer to one event as <b><i>A</i></b> and the other event as <b><i>B</i></b>. A description can therefore look like <i>\"If A ... then B...\"</i><br>The events shown in the image will not be referred to as A or B, but instead as two icons (spades and diamond) (i.e. the icons in the events has no meaning. They only indicate that the two events are different from each other).",
+		"text": "Imagine you are getting ready to cook dinner. These are the 5 constraints you are applying.<br><br><br>" ,
 
-		"text_exclude": "<hr>- Initially you decide to cook a dish without using oil. I.e. you decide to <b><u>exclude</u></b> using oil.",
-		"text_condition": "<hr>- Before cooking the dish, you need to prepare the ingredients. I.e. <b><u>You need</u></b> to prepare the ingredients first <b><u>before</u></b> cooking the dish.",
-		"text_response": "<hr>- Once you have prepared the ingredients, cooking the dish becomes <b><u>a goal that you must eventually do</u></b>.",
-		"text_include": "<hr>- The pan you are using is an old pan, and you decide to use oil after all. I.e. you decide to <b><u>include</u></b> using oil.",
-		"text_milestone": "<hr>- You can <b><u>initially</u></b> start to cook, but if someone else is using the stove, then you cannot start cooking until they are done with the stove. I.e. If another person is using the stove then that is a <b><u>goal that must be done</u></b> before you can start cooking.<hr>",
-		// "text_relations": "<ul><li>You decide to cook a dish without using oil. I.e. you decide to <b><u>exclude</u></b> using oil.</li><li>Before cooking the dish, you need to prepare the ingredients. I.e. <b><u>You need</u></b> to prepare the ingredients first <b><u>before</u></b> cooking the dish.</li><li>Once you have prepared the ingredients, cooking the dish becomes <b><u>a goal that you must eventually do</u></b>.</li><li>The pan you are using is an old pan, and you decide to use oil after all. I.e. you decide to <b><u>include</u></b> using oil.</li><li>You can initially start to cook, but if someone else is using the stove, then you cannot start cooking until they are done with the stove.</li></ul>",
+		"text_exclude": "<hr>At first, you decide to cook a dish without using oil; i.e., you decide to <b><u>exclude</u></b> using oil.",
+		
+		"text_condition": "<hr>Before cooking the dish, you need to prepare the ingredients; i.e., you <b><u>need</u></b> to prepare the ingredients <b><u>before</u></b> cooking the dish.",
 
-		"text_end": "In a moment, you will be shown an image of a relation between two events (As the image below). Furthermore, you will be shown 6 different descriptions. Your task is to choose the description that you think most accurately describes the relation in the image. If no description fits, then click \"No description fits\".",
+		"text_response": "<hr>Once you have prepared the ingredients, cooking the dish becomes <b><u>a goal </u></b>that you <b><u>must eventually</u></b> do.",
+
+		"text_include": "<hr>The pan you are using is an old pan, and you decide to use oil after all; i.e., you decide to <b><u>include</u></b> using oil.",
+
+		"text_milestone": "<hr>For cooking the dish, you can always use the stove unless someone else is using it, then you must wait until the they are done using the it; i.e., if another person is using the stove then that is <b><u>a goal</u></b> that <b><u>must</u></b> be done before you can start cooking.<hr>",
+
 		"button": "CONTINUE"
 	},
 	"instructions":{
 		"title": "INSTRUCTIONS",
-		"text":"In a moment, you will be shown an image of a relation between two events (As the image above). Furthermore, you will be shown 6 different descriptions where 5 of them are as the previous example. Your task is to choose the description that you think most accurately describes the relation in the image. If no description fits, then click \"No description fits\". <br><br>Remember that the descriptions are based on an example but try to think of these in a more general sense. <br> <br>It is important to know that there are in total 10 relations, which means that a description can be applied to several relations.",
+		"text":"In a moment, you will be shown an image of a relation between two events (like the image above). Below the image, you will be shown 6 different descriptions similar to the ones in the example. Your task is to choose the description that you consider most accurately describes the relation shown in the image. If you consider that no description fits, then choose \"No description fits\". You may choose one description for multiple relations.<br><br>The descriptions are expressed in terms of concrete situations, but try to think of them in a more general sense.",
 		"button": "CONTINUE"
 	},
 	"instructions2":{
-		"text":"<b>Please, do not speak or otherwise interact with other people during this survey. <br><br> Try to answer each question independently of the previous question.</b>",
+		"text":"<b>Please, interact with other people during this survey. <br><br> Try to answer each question independently of the previous question.</b>",
 		"button": "START"
 	},
 	"questions":{

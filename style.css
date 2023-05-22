@@ -16,7 +16,7 @@ body {
 }
 
 #container {
-    width: 600px;
+    width: 700px;
     margin: auto;
 }
 .navigation_btn {
@@ -31,6 +31,9 @@ body {
     margin-top: 70px;
 }
 
+ul {
+    padding-left: 30px;
+}
 .navigation_btn:hover {
     background-color: #1e3a8a;
 }
@@ -249,7 +252,7 @@ button {
     cursor: pointer;
     border: none;
     outline: none;
-    width: 185px;
+    width: 218px;
     filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
     padding: 20px;
     color: #1e293b;
