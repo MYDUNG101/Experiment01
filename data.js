@@ -51,7 +51,7 @@ export var pages = {
 	},
 	"about": {
 		"title": "ABOUT",
-		"text": "My name is Dung M. T. Trinh and I am a bachelor student at Technical University of Denmark (DTU). <br> <br> As part of my bachelor project, I am conducting a survey as one of my studies. The purpose of this survey is to investigate the understanding of the <b><i>visual representation of relations</i></b> with its semantic meaning for Dynamic Condition Response (DCR) graphs. <br> <br>Before the survey you will be provided with an explanation and an example of the use of DCR relations. You will also be given instructions on how to complete the survey <br> <br><b>Please read the explanation and instructions thoroughly.</b>.",
+		"text": "My name is Dung M. T. Trinh and I am a bachelor student at Technical University of Denmark (DTU). <br> <br> As part of my bachelor project, I am conducting a survey as one of my studies. The purpose of this survey is to investigate the understanding of the <b><i>visual representation of relations</i></b> with its semantic meaning for Dynamic Condition Response (DCR) graphs. <br> <br>Before the survey you will be provided with an explanation to the concept of DCR. You will also be given instructions on how to complete the survey. The survey will take approximately 15-25 minutes (including reading the explanation and instructions)<br><br><b>Please read the explanation and instructions thoroughly.</b>.",
 		"button": "CONTINUE"
 	},
 	"dcr": {
