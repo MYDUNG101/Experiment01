@@ -24,7 +24,7 @@ body {
 }
 
 #container {
-    width: 800px;
+    width: 1000px;
     margin: auto;
 }
 .navigation_btn {
@@ -253,7 +253,7 @@ button {
 
 
 .question_image_example {
-    width: 55%;
+    width: 50%;
     object-fit: contain;
     margin: 0.5rem;
 }
@@ -263,9 +263,9 @@ button {
     /* width: 70%;
     height: 16rem; */
     width: 70%;
-    height: 24rem;
+    height: 30rem;
     object-fit: contain;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .navigation_btn:disabled, 
