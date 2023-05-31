@@ -80,6 +80,12 @@ export function displayQuestion(index){
     task_container.appendChild(tooltip_badge);
     container.appendChild(task_container);
 
+    let textNote = general.createParagraph(data.pages.questions.text_note);
+    textNote.classList.add("pcenter");
+    textNote.classList.add("p_inline_block");
+    let taskNote_container = document.createElement("div");
+    task_container.appendChild(taskNote_container);
+
     //Next button
     let btn = general.createButton(data.pages.questions.button, function() {
         // if (index == 1) {

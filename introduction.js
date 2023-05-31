@@ -42,8 +42,20 @@ export function displayDCR(){
     img.classList.add("question_image_example");
     container.appendChild(img);
 
-    let paraImage = general.createParagraph(data.pages.dcr.text_image);
-    container.appendChild(paraImage);
+    // Markings
+    let paraPreMarkings = general.createParagraph(data.pages.dcr.text_pre_markings);
+    container.appendChild(paraPreMarkings);
+
+    let imgMarkings = document.createElement("img");
+    imgMarkings.src = "images/Markings.png";
+    imgMarkings.classList.add("question_image_example");
+    container.appendChild(imgMarkings);
+
+    let paraMarkings = general.createParagraph(data.pages.dcr.text_markings);
+    container.appendChild(paraMarkings);
+
+    let paraNext = general.createParagraph(data.pages.dcr.text_next);
+    container.appendChild(paraNext);
 
     let btn = general.createButton(data.pages.dcr.button, function() {
         displayInstructionsExample();
@@ -58,56 +70,27 @@ export function displayInstructionsExample(){
 
     let para = general.createParagraph(data.pages.example.text);
     container.appendChild(para);
+
+    //Image
+    let img = document.createElement("img");
+    img.src = "images/example2.png";
+    img.classList.add("question_image_example");
+    container.appendChild(img);
+
     let para_exclude = general.createParagraph(data.pages.example.text_exclude);
     container.appendChild(para_exclude);
-    // //Image
-    // let img_exclude = document.createElement("img");
-    // img_exclude.src = "images/Instructions/exclude.png";
-    // img_exclude.classList.add("instructions_image");
-    // container.appendChild(img_exclude);
 
     let para_condition = general.createParagraph(data.pages.example.text_condition);
     container.appendChild(para_condition);
-    // //Image
-    // let img_condition = document.createElement("img");
-    // img_condition.src = "images/Instructions/condition.png";
-    // img_condition.classList.add("instructions_image");
-    // container.appendChild(img_condition);
-
-
-    let para_response = general.createParagraph(data.pages.example.text_response);
-    container.appendChild(para_response);
-    // //Image
-    // let img_response = document.createElement("img");
-    // img_response.src = "images/Instructions/response.png";
-    // img_response.classList.add("instructions_image");
-    // container.appendChild(img_response);
 
     let para_include = general.createParagraph(data.pages.example.text_include);
     container.appendChild(para_include);
-    // //Image
-    // let img_include = document.createElement("img");
-    // img_include.src = "images/Instructions/include.png";
-    // img_include.classList.add("instructions_image");
-    // container.appendChild(img_include);
+
+    let para_response = general.createParagraph(data.pages.example.text_response);
+    container.appendChild(para_response);
 
     let para_milestone = general.createParagraph(data.pages.example.text_milestone);
     container.appendChild(para_milestone);
-    
-    // //Image
-    // let img_milestone = document.createElement("img");
-    // img_milestone.src = "images/Instructions/milestone.png";
-    // img_milestone.classList.add("instructions_image");
-    // container.appendChild(img_milestone);
-
-    // //Image
-    // let img = document.createElement("img");
-    // img.src = "images/example.png";
-    // img.classList.add("question_image_example");
-    // container.appendChild(img);
-
-    // let paraEvent = general.createParagraph(data.pages.instructions.text_events);
-    // container.appendChild(paraEvent);
 
     let para_next = general.createParagraph(data.pages.example.text_next);
     container.appendChild(para_next);
@@ -125,7 +108,7 @@ export function displayInstructions(){
 
     //Image
     let img = document.createElement("img");
-    img.src = "images/example.png";
+    img.src = "images/example3.png";
     img.classList.add("question_image_example");
     container.appendChild(img);
 

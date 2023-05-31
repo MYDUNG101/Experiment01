@@ -253,15 +253,17 @@ button {
 
 
 .question_image_example {
-    width: 60%;
+    width: 55%;
     object-fit: contain;
     margin: 0.5rem;
 }
 
 
 .question_image {
+    /* width: 70%;
+    height: 16rem; */
     width: 70%;
-    height: 16rem;
+    height: 24rem;
     object-fit: contain;
     margin-bottom: 30px;
 }
