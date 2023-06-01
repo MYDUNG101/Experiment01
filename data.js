@@ -93,7 +93,7 @@ export var pages = {
 
 		"text_none": "<hr><ul><li>No description fits</li></ul><hr>",
 
-		"text_task": "<br><br>Your task is to choose the description that you consider most accurately describes the highlighted relation shown in the image. If you consider that no description fits, then choose \"No description fits\". You may choose one description for multiple relations. The survey does not test your performance (all answers are good answers), but help us identify whether the relations reflects their intended meaning.",
+		"text_task": "<br><br>Your task is to choose the description that you consider most accurately describes the highlighted relation shown in the image. If you consider that no description fits, then choose \"No description fits\". You may choose one description for multiple images. The survey does not test your performance (all answers are good answers), but help us identify whether the relations reflects their intended meaning.",
 
 		"button": "CONTINUE"
 	},
