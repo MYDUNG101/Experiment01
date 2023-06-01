@@ -17,3 +17,11 @@ export function createButton(text, clickFn) {
     btn.addEventListener("click", clickFn);
     return btn;
 }
+
+export function updateView(content) {
+    if (parent_container.firstChild != null){
+        parent_container.replaceChild(content, parent_container.firstChild);
+    } else {
+        parent_container.appendChild(content);
+    }
+}

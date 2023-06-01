@@ -91,7 +91,7 @@ export function createForm(){
 }
 
 export function displayDemographics(answers){
-    container.innerHTML = "";
+    let container = document.createElement("div");
     let title = general.createTitle("DEMOGRAPHICS");
     container.appendChild(title);
 
@@ -109,6 +109,8 @@ export function displayDemographics(answers){
     form.addEventListener("submit", submitFn(answers));
 
     container.appendChild(form); 
+
+    general.updateView(container);
 }
 
 let submitFn = function(answers){
@@ -135,11 +137,13 @@ let submitFn = function(answers){
 }
 
 export function displayThanks(){
-    container.innerHTML = "";
+    let container = document.createElement("div");
     let title = general.createTitle(data.pages.thanks.title);
     container.appendChild(title);
 
     let para = general.createParagraph(data.pages.thanks.text);
     para.classList.add("pcenter")
     container.appendChild(para);
+
+    general.updateView(container);
 }

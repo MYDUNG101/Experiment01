@@ -15,21 +15,29 @@ export function displayStart(){
 }
 
 export function displayAbout(){
-    container.innerHTML = "";
+    let container = document.createElement("div");
+
     let title = general.createTitle(data.pages.about.title);
     container.appendChild(title);
 
     let para = general.createParagraph(data.pages.about.text);
     container.appendChild(para);
 
+    let paraImportant = general.createParagraph(data.pages.about.text_important);
+    paraImportant.classList.add("p_important")
+    container.appendChild(paraImportant);
+
     let btn = general.createButton(data.pages.about.button, function() {
         displayDCR();
     })
     container.appendChild(btn);
+
+    general.updateView(container);
 }
 
 export function displayDCR(){
-    container.innerHTML = "";
+    let container = document.createElement("div");
+
     let title = general.createTitle(data.pages.dcr.title);
     container.appendChild(title);
 
@@ -64,54 +72,19 @@ export function displayDCR(){
     container.appendChild(paraMarkings);
 
     let paraNext = general.createParagraph(data.pages.dcr.text_next);
+    paraNext.classList.add("p_important")
     container.appendChild(paraNext);
 
     let btn = general.createButton(data.pages.dcr.button, function() {
         displayInstructions();
     })
     container.appendChild(btn);
+
+    general.updateView(container);
 }
 
-// export function displayInstructionsExample(){
-//     container.innerHTML = "";
-//     let title = general.createTitle(data.pages.example.title);
-//     container.appendChild(title);
-
-//     let para = general.createParagraph(data.pages.example.text);
-//     container.appendChild(para);
-
-//     //Image
-//     let img = document.createElement("img");
-//     img.src = "images/example2.png";
-//     img.classList.add("question_image_example");
-//     container.appendChild(img);
-
-//     let para_exclude = general.createParagraph(data.pages.example.text_exclude);
-//     container.appendChild(para_exclude);
-
-//     let para_condition = general.createParagraph(data.pages.example.text_condition);
-//     container.appendChild(para_condition);
-
-//     let para_include = general.createParagraph(data.pages.example.text_include);
-//     container.appendChild(para_include);
-
-//     let para_response = general.createParagraph(data.pages.example.text_response);
-//     container.appendChild(para_response);
-
-//     let para_milestone = general.createParagraph(data.pages.example.text_milestone);
-//     container.appendChild(para_milestone);
-
-//     let para_next = general.createParagraph(data.pages.example.text_next);
-//     container.appendChild(para_next);
-
-//     let btn = general.createButton(data.pages.example.button, function() {
-//         displayInstructions();
-//     })
-//     container.appendChild(btn);
-// }
-
 export function displayInstructions(){
-    container.innerHTML = "";
+    let container = document.createElement("div");
     let title = general.createTitle(data.pages.instructions.title);
     container.appendChild(title);
 
@@ -146,16 +119,19 @@ export function displayInstructions(){
     container.appendChild(para_none);
 
     let paraTask = general.createParagraph(data.pages.instructions.text_task);
+    paraTask.classList.add("p_important2")
     container.appendChild(paraTask);
 
     let btn = general.createButton(data.pages.instructions.button, function() {
         displayInstructions2();
     })
     container.appendChild(btn);
+
+    general.updateView(container);
 }
 
 export function displayInstructions2(){
-    container.innerHTML = "";
+    let container = document.createElement("div");
     let title = general.createTitle("");
     container.appendChild(title);
 
@@ -167,4 +143,6 @@ export function displayInstructions2(){
         questions.displayQuestion(0);
     })
     container.appendChild(btn);
+
+    general.updateView(container);
 }

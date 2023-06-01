@@ -23,7 +23,7 @@ body {
     justify-content: center;
 }
 
-#container {
+#parent_container {
     width: 1000px;
     margin: auto;
 }
@@ -74,6 +74,18 @@ p{
 .pcenter{
     text-align: center;
     font-weight: bold;
+}
+
+.p_important{
+    text-align: center;
+    font-weight: bold;
+    color: red;
+}
+
+.p_important2{
+    text-align: center;
+    font-weight: bold;
+    color: green;
 }
 
 .p_inline_block {

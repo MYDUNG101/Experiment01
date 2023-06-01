@@ -1,15 +1,15 @@
 import * as general from './general.js'
 import * as data from "./data.js"
 import { displayDemographics } from './demographics.js';
-import { writeData } from './database.js';
 
 var answers = {};
+var container = document.createElement("div");
 
 function getAnswerCardID(answerID){
     return "answer_card" + answerID;
 }
-function resetAnswerButtons(){
-    for (let [id, _] of Object.entries(data.answers)) {
+function resetAnswerButtons(img_id){
+    for (let [id, _] of Object.entries(data.images[img_id].answers)) {
         let btn = document.getElementById(getAnswerCardID(id));
         btn.classList.remove("selected");
     }
@@ -19,11 +19,11 @@ function displayAnswerButtons(img_id, next_btn) {
     let div = document.createElement("div");
     div.classList.add("questions_container");
 
-    for (let [id, txt] of Object.entries(data.answers)) {
+    for (let [id, txt] of Object.entries(data.images[img_id].answers)) {
         var btn = create_answer_card(txt);
         btn.id = getAnswerCardID(id);
         btn.addEventListener("click", function(e) {
-            resetAnswerButtons();
+            resetAnswerButtons(img_id);
             answers[img_id] = e.target.id;
             e.target.classList.add("selected");
             next_btn.disabled = false;
@@ -42,18 +42,20 @@ function create_answer_card(text) {
     return card;
 }
 
+var imagesIndex = Object.keys(data.images);
+var shuffledImages = imagesIndex.sort((a, b) => 0.5 - Math.random());
 
 export function displayQuestion(index){
     container.innerHTML = "";
     console.log("current answers" + Object.entries(answers));
 
     //Title
-    let title = general.createTitle(index+1 + "/" + data.shuffledImages.length);
+    let title = general.createTitle(index+1 + "/" + shuffledImages.length);
     container.appendChild(title);
 
     //Image
     let img = document.createElement("img");
-    let img_id = data.shuffledImages[index];
+    let img_id = shuffledImages[index];
     img.src = "images/" + data.images[img_id].image;
     img.classList.add("question_image");
     container.appendChild(img);
@@ -80,16 +82,10 @@ export function displayQuestion(index){
     task_container.appendChild(tooltip_badge);
     container.appendChild(task_container);
 
-    let textNote = general.createParagraph(data.pages.questions.text_note);
-    textNote.classList.add("pcenter");
-    textNote.classList.add("p_inline_block");
-    let taskNote_container = document.createElement("div");
-    task_container.appendChild(taskNote_container);
-
     //Next button
     let btn = general.createButton(data.pages.questions.button, function() {
         // if (index == 1) {
-        if (index+1 == data.shuffledImages.length) {
+        if (index+1 == shuffledImages.length) {
             displayDemographics(answers);
         } else {
             displayQuestion(index+1);
@@ -101,4 +97,6 @@ export function displayQuestion(index){
     displayAnswerButtons(img_id, btn);
 
     container.appendChild(btn);
+
+    general.updateView(container);
 }
