@@ -10,7 +10,7 @@ var answers_white = {
 var answers_purple = {
 	1: "If you \"Draw purple card\" then you <b><u>cannot</u></b> \"Play black card\".", // Exclude
 	2: "You <b><u>can only</u></b> \"Play black card\" once you have \"Draw purple card\".", // Condition
-	3: "If you were unable to \"Play black card\" before, you can now do so after you \"Draw purple card\".", // Include
+	3: "If you were <b><u>unable</u></b> to \"Play black card\" before, you can now do so after you \"Draw purple card\".", // Include
 	4: "If you \"Draw purple card\" you <b><u>must</u></b> at some point \"Play black card\".", // Response
 	5: "If \"Draw purple card\" is required, then in order to \"Play black card\" you <b><u>must</u></b> \"Draw purple card\" first.", // Milestone
 	6: "No description fits"
@@ -84,9 +84,9 @@ export var pages = {
 	},
 	"dcr": {
 		"title": "Dynamic Condition Response (DCR)",
-		"text_event": "A DCR graph consists of nodes and edges:<ul><li>A node is called an <b><i>event</i></b>, which is visualized by a rectangle, represents something that can happen. E.g.: \"Draw yellow card\":</li></ul>",
+		"text_event": "A DCR graph consists of nodes and edges:<ul><li>A node is called an <b><i>event</i></b>, which is visualized by a rectangle. It represents something that can happen. E.g.: \"Draw yellow card\":</li></ul>",
 
-		"text_relation": "<ul><li>A <b><i>relation</i></b> represents a relationship between two events. The relation is indicated by a continuous connection between two events. E.g. the following dashed relation could indicate; <i>if I \"Draw yellow card\" then I can never \"Play black card\"</i>:</li></ul>",
+		"text_relation": "<ul><li>An edge is called a <b><i>relation</i></b> and represents a relationship between two events. The relation is indicated by a continuous connection between two events. E.g. the following dashed relation could indicate; <i>if I \"Draw yellow card\" then I can never \"Play black card\"</i>:</li></ul>",
 
 		"text_pre_markings": "An event can be in a state (see figure below). ",
 
@@ -108,7 +108,7 @@ export var pages = {
 
 		"text_response": "<hr><ul><li>If you \"Draw purple card\" you <b><u>must</u></b> at some point \"Play black card\".</li></ul>",
 
-		"text_include": "<hr><ul><li>If you were unable to \"Play black card\" before, you can now do so after you \"Draw purple card\".</li></ul>",
+		"text_include": "<hr><ul><li>If you were <b><u>unable</u></b> to \"Play black card\" before, you can now do so after you \"Draw purple card\".</li></ul>",
 
 		"text_milestone": "<hr><ul><li>If \"Draw purple card\" is required, then in order to \"Play black card\" you <b><u>must</u></b> \"Draw purple card\" first.</li></ul>",
 

@@ -47,7 +47,6 @@ var shuffledImages = imagesIndex.sort((a, b) => 0.5 - Math.random());
 
 export function displayQuestion(index){
     container.innerHTML = "";
-    console.log("current answers" + Object.entries(answers));
 
     //Title
     let title = general.createTitle(index+1 + "/" + shuffledImages.length);
@@ -59,9 +58,6 @@ export function displayQuestion(index){
     img.src = "images/" + data.images[img_id].image;
     img.classList.add("question_image");
     container.appendChild(img);
-
-    console.log("imag id" + img_id);
-    console.log(index);
 
     // Task
     let task = general.createParagraph(data.pages.questions.text_task);
