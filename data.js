@@ -84,9 +84,9 @@ export var pages = {
 	},
 	"dcr": {
 		"title": "Dynamic Condition Response (DCR)",
-		"text_event": "A DCR graph consists of nodes and edges:<ul><li>A node is called an <b><i>event</i></b>, which is visualized by a rectangle. It represents something that can happen. E.g.: \"Draw yellow card\":</li></ul>",
+		"text_event": "A DCR graph consists of nodes and edges:<ul><li>A node is called an <b><i>event</i></b> and it is visualized by a rectangle. It represents something that can happen. E.g.: \"Draw yellow card\":</li></ul>",
 
-		"text_relation": "<ul><li>An edge is called a <b><i>relation</i></b> and represents a relationship between two events. The relation is indicated by a continuous connection between two events. E.g. the following dashed relation could indicate; <i>if I \"Draw yellow card\" then I can never \"Play black card\"</i>:</li></ul>",
+		"text_relation": "<ul><li>An edge is called a <b><i>relation</i></b> and it represents a relationship between two events. The relation is indicated by a continuous connection between two events. E.g. the following dashed relation could indicate; <i>if I \"Draw yellow card\" then I can never \"Play black card\"</i>:</li></ul>",
 
 		"text_pre_markings": "An event can be in a state (see figure below). ",
 
