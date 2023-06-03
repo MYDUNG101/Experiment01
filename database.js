@@ -23,14 +23,3 @@ export async function writeData(data, onSuccess){
         onFailure();
       }
 }
-
-/*export async function writeDataWithKey(dataID, data, onSuccess){
-    try {
-        await setDoc(doc(db, dataKey, dataID), data);
-        onSuccess(dataID);
-      } catch (e) {
-        console.error("Error saving answers: ", e);
-        alert("An error occurred. Please try again.");
-      }
-}
-*/
